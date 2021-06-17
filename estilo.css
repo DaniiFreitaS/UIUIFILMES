@@ -1,0 +1,123 @@
+.header{
+    background: crimson;
+}
+.header_area{
+    padding: 10px;
+}
+.logo{
+    max-width: auto;
+    height: 30px;
+}
+
+.menu_area{
+    padding: 10px;
+}
+.nav-link{
+    color: white !important;
+}
+#drop{
+    color: rgb(1, 13, 38) !important;
+}
+.btn{
+    color: rgb(1, 13, 38);
+    background-color: white;
+}
+.navbar-brand{
+    color: rgb(1, 13, 38);
+}
+.carousel-inner{
+    background-color: rgb(1, 13, 38);
+    padding: 1%;
+}
+.carousel-indicators{
+    margin-top: 0px;
+}
+.footer{
+    background: crimson;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+#lancamentos{
+    text-align: center;
+    background-color: rgb(1, 13, 38);
+    padding: 1%;
+    color: white;
+}
+#textosc{
+    color: white;
+}
+.videoWrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+  }
+.videoWrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+#conteudoNavbarSuportado{
+    color: white;
+}
+#destaque{
+    padding: 1%;
+}
+#entrevistas{
+    background-color: rgb(1, 13, 38);
+    color: white;
+    padding: 20px;
+}
+#rodapelogo{
+    justify-content: end;
+    align-content: center;
+}
+#novidades{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+#review{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 15%;
+}
+#nov{
+    padding: 10px;
+    border-top: 2px solid rgb(1, 13, 38);
+}
+#novtop{
+    padding: 10px;
+}
+#imgc{
+    padding-bottom: 10px;
+}
+#imgb{
+    max-width: 90%; 
+   padding-left: 10px;
+   padding-bottom: 10px;
+}
+@media screen and (min-width: 1280px){
+#review{
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 50%;
+}   
+}
+@media screen and (min-width: 768px) and (max-width: 1279px){
+    #review{
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 30%;
+        height: 25%;
+}  
+}
