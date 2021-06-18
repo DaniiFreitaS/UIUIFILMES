@@ -2,13 +2,18 @@ const TMDB_ENDPOINT = 'https://api.themoviedb.org/3';
 const APIKEY = '46dbd9e2140996af5b47c9a91976c0c4';
 const IMG_PREFIX = 'https://image.tmdb.org/t/p/w500';
 let xhr;
+let pagina = 1;
+let totalpagina;
 
 function carregaFilmes () {
     xhr = new XMLHttpRequest ();
-
-    xhr.open ('GET', TMDB_ENDPOINT + '/movie/popular' + '?api_key=' + APIKEY, true);
-    xhr.onload = exibeFilmes;
-    xhr.send();
+    
+    if (pagina == 1 || pagina <= totalpagina){
+        xhr.open ('GET', TMDB_ENDPOINT + '/movie/popular' + '?api_key=' + APIKEY  + '&language=pt-BR&page=' + pagina, true);
+        xhr.onload = exibeFilmes;
+        xhr.send();
+        pagina++;
+    }
 }
 
 function pesquisaFilmes () {
@@ -26,13 +31,14 @@ function exibeFilmes () {
     
     let data = JSON.parse (xhr.responseText);
     let textoHTML = '';
+    totalpagina = data.total_pages;
 
     for (let i = 0; i < data.results.length; i++) {
         let nomeFilme = data.results[i].title;
         let sinopse = data.results[i].overview;
         let imagem = IMG_PREFIX + data.results[i].poster_path;
 
-        textoHTML += `<div class="card col-md-4">
+        textoHTML += `<div class="card col-md-2">
             <img src="${imagem}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${nomeFilme}</h5>
@@ -42,5 +48,5 @@ function exibeFilmes () {
         </div>`
     }
 
-    document.getElementById('tela').innerHTML = textoHTML;
+    document.getElementById('tela').innerHTML += textoHTML;
 }
