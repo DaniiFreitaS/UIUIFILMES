@@ -35,7 +35,7 @@ function exibeFilmesPesquisa () {
         let nomeFilme = data.results[i].title;
         let sinopse = data.results[i].overview;
         let imagem = IMG_PREFIX + data.results[i].poster_path;
-
+        let id = data.results[i].id;
         textoHTML += `<div class="card col-md-2">
             <img src="${imagem}" class="card-img-top" alt="...">
             <div class="card-body">
