@@ -41,7 +41,7 @@ function exibeFilmesPesquisa () {
             <div class="card-body">
                 <h5 class="card-title">${nomeFilme}</h5>
                 <p class="card-text">${sinopse}</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a href="https://www.themoviedb.org/movie/${id}" class="btn btn-dark">Saiba mais</a>
             </div>
         </div>`
     }
