@@ -22,8 +22,31 @@ function pesquisaFilmes () {
     query = document.getElementById('pesquisa').value;
 
     xhr.open ('GET', TMDB_ENDPOINT + '/search/movie' + '?api_key=' + APIKEY + '&query=' + query, true);
-    xhr.onload = exibeFilmes;
+    xhr.onload = exibeFilmesPesquisa;
     xhr.send();
+}
+
+function exibeFilmesPesquisa () {
+    
+    let data = JSON.parse (xhr.responseText);
+    let textoHTML = '';
+
+    for (let i = 0; i < data.results.length; i++) {
+        let nomeFilme = data.results[i].title;
+        let sinopse = data.results[i].overview;
+        let imagem = IMG_PREFIX + data.results[i].poster_path;
+
+        textoHTML += `<div class="card col-md-2">
+            <img src="${imagem}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${nomeFilme}</h5>
+                <p class="card-text">${sinopse}</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>`
+    }
+
+    document.getElementById('tela').innerHTML = textoHTML;
 }
 
 
