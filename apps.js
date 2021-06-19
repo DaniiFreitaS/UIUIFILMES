@@ -60,13 +60,14 @@ function exibeFilmes () {
         let nomeFilme = data.results[i].title;
         let sinopse = data.results[i].overview;
         let imagem = IMG_PREFIX + data.results[i].poster_path;
+        let id = data.results[i].id;
 
         textoHTML += `<div class="card col-md-2">
             <img src="${imagem}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${nomeFilme}</h5>
                 <p class="card-text">${sinopse}</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a href="https://www.themoviedb.org/movie/${id}" class="btn btn-dark">Saiba mais</a>
             </div>
         </div>`
     }
